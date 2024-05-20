@@ -4,8 +4,8 @@ import Layout from "./layout/Layout"
 import Favorites from "./pages/Favorites"
 import Category from "./pages/Category"
 import Search from "./pages/Search"
-import GIF from "./pages/GIF"
 import GifProvider from "./context/context"
+import SingleGifPage from "./pages/SingleGifPage"
 
 const router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/:type/:slug',
-        element: <GIF />,
+        element: <SingleGifPage />,
       },
       {
         path: '/search/:query',
