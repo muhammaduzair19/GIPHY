@@ -1,16 +1,12 @@
 import { GiphyFetch } from "@giphy/js-fetch-api";
-import React, { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
-
-interface GifProviderProps {
-    children: ReactNode;
-}
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const gifContext = createContext();
 
-const GifProvider: React.FC<GifProviderProps> = ({ children }) => {
-    const [gifs, setGifs] = useState<{}[]>([])
-    const [filter, setFilter] = useState<string>('gifs')
-    const [favorites, setFavorites] = useState<string[]>([])
+const GifProvider = ({ children }) => {
+    const [gifs, setGifs] = useState([])
+    const [filter, setFilter] = useState('gifs')
+    const [favorites, setFavorites] = useState([])
 
     const addToFavorites = (id) => {
         if (favorites.includes(id)) {

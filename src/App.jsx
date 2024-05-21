@@ -1,11 +1,11 @@
-import { BrowserRouter, RouterProvider, createBrowserRouter } from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Home from "./pages/Home"
-import Layout from "./layout/Layout"
-import Favorites from "./pages/Favorites"
-import Category from "./pages/Category"
-import Search from "./pages/Search"
-import GifProvider from "./context/context"
-import SingleGifPage from "./pages/SingleGifPage"
+import Layout from "./layout/Layout.jsx"
+import Favorites from "./pages/Favorites.jsx"
+import Category from "./pages/Category.jsx"
+import Search from "./pages/Search.jsx"
+import GifProvider from './context/context.jsx';
+import SingleGifPage from "./pages/SingleGifPage.jsx"
 
 const router = createBrowserRouter([
   {

@@ -3,7 +3,7 @@ import { HiMiniXMark, HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 
 const SearchGif = () => {
-    const [query, setQuery] = useState<string>();
+    const [query, setQuery] = useState();
     const navigate = useNavigate()
 
     const searchGIFs = async () => {

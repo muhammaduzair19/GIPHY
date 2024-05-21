@@ -26,7 +26,7 @@ const Home = () => {
       <FilterGif showTrending />
       <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 mt-5">
         {
-          gifs.map((gif: {}) => {
+          gifs.map((gif) => {
             return <Gif gif={gif} key={gif.title} />
 
           })

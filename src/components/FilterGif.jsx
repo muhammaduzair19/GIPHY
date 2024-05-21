@@ -1,5 +1,5 @@
 import { HiMiniArrowTrendingUp } from "react-icons/hi2";
-import { contextState } from "../context/context"
+import { contextState } from "../context/context.jsx"
 
 const filters = [
     {

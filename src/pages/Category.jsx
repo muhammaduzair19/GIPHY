@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom"
-import { contextState } from "../context/context"
+import { contextState } from "../context/context.jsx"
 import { useEffect, useState } from "react"
 import Gif from "../components/Gif"
 import FollowOn from "../components/FollowOn"
 
 const Category = () => {
-  const [results, setResults] = useState<string[]>([])
+  const [results, setResults] = useState([])
   const { category } = useParams()
   const { gf } = contextState()
 
@@ -35,7 +35,7 @@ const Category = () => {
         </h2>
         <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 mt-5">
           {
-            results?.slice(1)?.map((gif: {}) => {
+            results?.slice(1)?.map((gif) => {
               return <Gif gif={gif} key={gif.title} />
 
             })
