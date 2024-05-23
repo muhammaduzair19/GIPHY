@@ -52,7 +52,7 @@ const Header = () => {
                         </div>
                     }
 
-                    <button className="block lg:hidden ">
+                    <button onClick={() => setShowCategories(!showCategories)} className="block lg:hidden ">
                         <HiMiniBars3BottomRight size={30} className="text-sky-400" />
                     </button>
 

@@ -15,15 +15,19 @@ const SingleGifPage = () => {
     console.log(slug);
 
     const [gif, setGif] = useState()
+    const [embed, setEmbed] = useState(false)
+    const [share, setShare] = useState(false)
     const [readMore, setReadMore] = useState('false')
     const [relatedGifs, setRelatedGifs] = useState()
     const { gf, addToFavorites, favorites } = contextState()
 
     const shareGif = () => {
-
+        setShare(!share)
+        setEmbed(false)
     }
     const embedGif = () => {
-
+        setEmbed(!embed)
+        setShare(false)
     }
 
     const searchGIFs = async () => {
@@ -81,7 +85,7 @@ const SingleGifPage = () => {
                                             onClick={() => setReadMore(!readMore)}
                                         >
                                             {
-                                                readMore ? (
+                                                !readMore ? (
                                                     <>
                                                         Read less <HiMiniChevronUp size={20} />
                                                     </>
@@ -118,13 +122,15 @@ const SingleGifPage = () => {
                     )
                 }
             </div>
+
+
             <div className="col-span-4 sm:col-span-3">
                 <div className="flex gap-6">
                     <div className="w-full sm:w-3/4">
                         <div className="faded-text truncate mb-2">
                             {gif?.title}
                         </div>
-                        <Gif gif={gif} hover={false} />
+                        <Gif gif={gif} hover={false} embed={embed} embedGif={embedGif} shareGif={shareGif} share={share} />
 
                         {/* mobile ui */}
                         <div className='flex sm:hidden'>
@@ -145,6 +151,8 @@ const SingleGifPage = () => {
                             </button>
                         </div>
                     </div>
+
+
 
                     <div className="hidden sm:flex flex-col gap-5 mt-6">
                         <button
@@ -175,7 +183,7 @@ const SingleGifPage = () => {
                 </div>
                 <div>
                     <span className='font-extrabold'>Related GIFs</span>
-                    <div className="columns-2 md:columns-3 gap-2">
+                    <div className="columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-2">
                         {
                             relatedGifs?.slice(1)?.map((gif) => (
                                 <Gif gif={gif} key={gif?.id} />
